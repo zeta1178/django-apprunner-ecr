@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
-# from ivr_ecr import views
+from ivr_ecr import views
 
 
 urlpatterns = [

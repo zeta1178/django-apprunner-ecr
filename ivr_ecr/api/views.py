@@ -7,3 +7,7 @@ from rest_framework.response import Response
 @api_view(['GET'])
 def hello_world(request):
     return Response({'message': 'Hello World!'})
+
+@api_view(['GET'])
+def health(request):
+    return Response({"status": "healthy"})
