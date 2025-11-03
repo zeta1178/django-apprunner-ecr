@@ -30,7 +30,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     # os.environ.get("DJANGO_ALLOWED_HOSTS","127.0.0.1").split(",")
     "0.0.0.0",
-    '*',
+    # '*',
+    'ivr-ecs-432595010.us-east-1.elb.amazonaws.com',
     ".awsapprunner.com",
     "localhost",
 ]
@@ -153,3 +154,6 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',
     ],
 }
+
+#Twilio
+TWILIO_AUTH_TOKEN = os.environ.get('TWILIO_AUTH_TOKEN', '')

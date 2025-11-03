@@ -5,8 +5,8 @@ FROM python:3.11-slim
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PIP_NO_CACHE_DIR=1 \
-    PIP_DISABLE_PIP_VERSION_CHECK=1
-
+    PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN} 
 # Set working directory
 WORKDIR /app
 
@@ -16,6 +16,9 @@ WORKDIR /app
 #     # postgresql-client \
 #     # libpq-dev \
 #     && rm -rf /var/lib/apt/lists/*
+
+# test env
+RUN echo "Using build argument: $TWILIO_AUTH_TOKEN"
 
 # Copy requirements file
 COPY requirements.txt .
