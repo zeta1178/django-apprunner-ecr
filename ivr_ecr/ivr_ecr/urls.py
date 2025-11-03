@@ -23,6 +23,6 @@ from ivr_ecr import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
-    # path('', views.home, name='home'),
+    path('answer/', views.answer, name='answer'),
     path('api/', include('api.urls')),
 ]
