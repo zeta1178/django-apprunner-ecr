@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from twilio.twiml.voice_response import VoiceResponse
 
 from django.conf import settings
+from django.http import HttpRequest
 from django.core.exceptions import SuspiciousOperation
 from twilio.request_validator import RequestValidator
 request_validator = RequestValidator(settings.TWILIO_AUTH_TOKEN)
@@ -34,5 +35,6 @@ def validate_django_request(request: HttpRequest):
 def answer(request: HttpRequest) -> HttpResponse:
     validate_django_request(request)
     vr = VoiceResponse()
-    vr.say('Hello!')
+    vr.say('Welcome, Michael! How are you?', voice='alice', language='en-US')
+    # vr.say('Welcome, Michael! How are you?', voice='Polly.Gregory-Neural', language='en-US')
     return HttpResponse(str(vr), content_type='text/xml')
