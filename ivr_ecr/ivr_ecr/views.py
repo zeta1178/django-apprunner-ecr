@@ -36,5 +36,6 @@ def answer(request: HttpRequest) -> HttpResponse:
     # validate_django_request(request)
     vr = VoiceResponse()
     # vr.say('Welcome, Michael! How are you?', voice='alice', language='en-US')
-    vr.say('Welcome, Michael! How are you?', voice='Polly.Matthew-Generative', language='en-US')
+    # vr.say('Welcome Michael! How are you?', voice='Polly.Matthew-Generative', language='en-US')
+    vr.say('Welcome Michael! How are you?', voice='Polly.Matthew-Neural', language='en-US')
     return HttpResponse(str(vr), content_type='text/xml')
