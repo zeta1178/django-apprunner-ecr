@@ -30,7 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     # os.environ.get("DJANGO_ALLOWED_HOSTS","127.0.0.1").split(",")
     "0.0.0.0",
-    '3.218.141.57',
+    '44.205.16.200',
     ".awsapprunner.com",
     "localhost",
 ]
