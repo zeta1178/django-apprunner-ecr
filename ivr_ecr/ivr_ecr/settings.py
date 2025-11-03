@@ -24,11 +24,11 @@ SECRET_KEY = 'django-insecure-dtnzlpzh@-ggqqwwt90r4)*88bgu2z8i_g68c$__%h+g34_k!j
 # SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = bool(os.environ.get("DEBUG", default=0))
+DEBUG = True
+# DEBUG = bool(os.environ.get("DEBUG", default=0))
 
 ALLOWED_HOSTS = [
-    os.environ.get("DJANGO_ALLOWED_HOSTS","127.0.0.1").split(",")
+    # os.environ.get("DJANGO_ALLOWED_HOSTS","127.0.0.1").split(",")
     ".awsapprunner.com",
     "localhost",
 ]
